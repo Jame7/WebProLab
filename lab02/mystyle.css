@@ -1,0 +1,54 @@
+/* myStyle.css */
+    A1{
+        font-family: 'Sriracha', cursive;
+        font-size: 22px;
+    }
+    A2{
+        font-family: 'Sriracha', cursive;
+        font-size: 15px;
+    }A3{
+        font-family: 'Sriracha', cursive;
+        font-size: 28px;
+    }
+    C1{
+        color:#330000;
+    }
+    A4{
+        font-family: 'Sriracha', cursive;
+        font-size: 40px;
+    }
+    C2{
+        color:#FF0A04;
+    }
+    Cblack{
+        color:#000000;
+    }
+    Cwhite{
+        color:#ffffff;
+    }
+    table {
+    border-collapse: collapse;
+    
+    }
+    table th, td {
+    border:1px solid black;
+    }
+    .table{
+        border-collapse: collapse;
+    }
+    table-inverse{
+        border-collapse: collapse;
+    }
+    table row{
+        border:1px solid black;
+    }
+    .active{
+        background-color: #ffffff;
+    }
+    lip{
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 15px 24px;
+        text-decoration: none;
+    }
