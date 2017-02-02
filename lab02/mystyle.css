@@ -1,12 +1,26 @@
 /* myStyle.css */
-    A1{
+/* 'Asap', sans-serif*/
+    fontnar{
         font-family: 'Sriracha', cursive;
-        font-size: 22px;
+        font-size: 18px;
+    }
+    A1foren{
+        font-family: 'Sriracha', cursive;
+        font-size: 18px;
     }
     A2{
         font-family: 'Sriracha', cursive;
         font-size: 15px;
-    }A3{
+    }
+    A1fortime{
+        font-family: 'Sriracha', cursive;
+        font-size: 15px;
+    }
+    A2fortime{
+        font-family: 'Sriracha', cursive;
+        font-size: 17.5px;
+    }
+    A3{
         font-family: 'Sriracha', cursive;
         font-size: 28px;
     }
@@ -26,6 +40,10 @@
     Cwhite{
         color:#ffffff;
     }
+    body{
+        background-color: #F5F5DC;
+        margin: 0;
+    }
     table {
     border-collapse: collapse;
     
@@ -33,22 +51,97 @@
     table th, td {
     border:1px solid black;
     }
-    .table{
-        border-collapse: collapse;
-    }
-    table-inverse{
-        border-collapse: collapse;
-    }
-    table row{
-        border:1px solid black;
-    }
+   
     .active{
         background-color: #ffffff;
     }
-    lip{
+    
+    .table {
+        display: table;
+        border:1px solid black;
+    }
+    .tr {
+        display: table-row;
+        
+    }
+    .th{
+        float: left;
+        display: table-cell;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        
+    }
+    .td {
+        float: left;
+        display: table-cell;
+        vertical-align: middle;
+        border:1px solid black; 
+    }
+    
+    div.img {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 250px;
+    }
+
+    div.img:hover {
+        border: 1px solid #777;
+    }
+
+    div.img img {
+        width: 250px;
+        height: auto;
+    }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
         display: block;
         color: white;
         text-align: center;
-        padding: 15px 24px;
+        padding: 8px 18px;
         text-decoration: none;
     }
+
+    li a:hover:not(.active) {
+        background-color: #333;
+    }
+
+    .active {
+        background-color: #ffff00;
+    }
+     .fonta {
+        background-color: #162C9a;
+        color : #FFD027;
+    }
+    div.polaroid {
+        width: 40%;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: 25px;
+    }
+    div.container {
+        text-align: center;
+        padding: 10px 20px;
+    }
+    
