@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Blog Lab03</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 25px;
+      }
+      .row.content {height: auto;} 
+    }
+    li a:hover:not(.active) {
+        background-color: #e0e0d2;
+    }/*
+    .active{
+      background-color: #FFFF00;
+    }*/
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-2 sidenav">
+          <h3><p class="text-center">Rattikron Blog</p></h3>
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="http://angsila.informatics.buu.ac.th/~58660136/887371/lab01/aboutme.html">Lab01(AboutMe)</a></li>
+            <li><a href="http://angsila.informatics.buu.ac.th/~58660136/887371/lab02/lab02.html">Lab02</a></li>
+            <li><a href="lab03.html">Lab03</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-10">
+          <!--<div class="container-fluid">-->
+            <div class="jumbotron text-center" style="background-color:#000000;">
+              <h1><font color = "ffffff">Blog's Bootstrap</font></h1><br>
+              <h2><small></small></h2>
+            </div>
+              <ul class="nav nav-tabs nav-justified">
+                <li class="active" ><a data-toggle="pill" href="#menu" ><b>Home</b></a></li>
+                <li><a data-toggle="pill" href="#menu1" ><b>การใช้งาน Grid ใน Bootstrap</b></a></li>
+                <li><a data-toggle="pill" href="#menu2"><b>การใช้งาน Form</b></a></li>
+              </ul>
+            <div class="tab-content">
+
+              <!--<div class="container-fluid">-->
+                <div id="menu" class="tab-pane fade in active">
+                <h2>Bootstrap</h2><hr>
+                <p>วันนี้จะมาวิธีการใช้ Bootstrap สองอย่างคือ</p>
+                <blockquote>
+                    <ul class="list-unstyled">
+                      <ul>
+                        <li>Grid for Bootstrap</li>
+                        <li>Form for Bootstrap</li>
+                      </ul>
+                    </ul>
+                  </blockquote>
+                  
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                  <h2>Bootstrap Grid System</h2><hr>
+                  <p class="text-info">Bootstrap's grid system allows up to 12 columns across the page.</p>
+                  <p class="text-info">If you do not want to use all 12 columns individually, you can group the columns together to create wider columns:</p>
+
+                  <div class="well col-sm-1 text-center">Span 1</div>
+                  <div class="well col-sm-1 text-center">Span 1</div>
+                  <div class="well col-sm-1 text-center">Span 1</div>
+                  <div class="well col-sm-1 text-center">Span 1</div>
+                  <div class="well col-sm-1 text-center">Span 1</div>
+                  <div class="well col-sm-1 text-center">Span 1</div>
+                  <div class="well col-sm-1 text-center">Span 1</div>
+                  <div class="well col-sm-1 text-center">Span 1</div>
+                  <div class="well col-sm-1 text-center">Span 1</div>
+                  <div class="well col-sm-1 text-center">Span 1</div>
+                  <div class="well col-sm-1 text-center">Span 1</div>
+                  <div class="well col-sm-1 text-center">Span 1</div>
+
+                  <div class="well col-sm-2 text-center">Span 2</div>
+                  <div class="well col-sm-4 text-center">Span 4</div>
+                  <div class="well col-sm-4 text-center">Span 4</div>
+                  <div class="well col-sm-2 text-center">Span 2</div>
+
+                  <div class="well col-sm-4 text-center">Span 4</div>
+                  <div class="well col-sm-8 text-center">Span 8</div>
+
+                  <div class="well col-sm-6 text-center">Span 6</div>
+                  <div class="well col-sm-6 text-center">Span 6</div>
+
+                  <div class="well col-sm-12 text-center">Span 12</div>
+
+                  <p>Bootstrap's grid system is responsive, and the columns will re-arrange automatically depending on the screen size.</p>
+                  <h2>Grid Classes</h2><hr>
+                  <p>The Bootstrap grid system has four classes:</p>
+                  <blockquote>
+                    <ul class="list-unstyled">
+                      <ul>
+                        <li>xs (for phones)</li>
+                        <li>sm (for tablets)</li>
+                        <li>md (for desktops)</li>
+                        <li>lg (for larger desktops)</li>
+                      </ul>
+                    </ul>
+                  </blockquote>
+                  <p>The classes above can be combined to create more dynamic and flexible layouts.</p>
+                  <h2>Basic Structure of a Bootstrap Grid</h2><hr>
+                  <p>The following is a basic structure of a Bootstrap grid:</p>
+                  <pre>&lt;div class="row"&gt;
+&lt;div class="col-*-*"&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+&lt;div class="col-*-*"&gt;&lt;/div&gt;
+&lt;div class="col-*-*"&gt;&lt;/div&gt;
+&lt;div class="col-*-*"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+&lt;/div&gt;</pre>
+                  <p>First; create a row(<kbd>&lt;div class="row"&gt;</kbd>).Then, add the desired number of columns (tags with appropriate <kbd>&lt;.col-*-*&gt;</kbd> classes). Note that numbers in <kbd>&lt;.col-*-*&gt;</kbd> should always add up to 12 for each row.</p>
+                  <p>Below we have collected some examples of basic Bootstrap grid layouts.</p>
+                  <h2>Three Equal Columns</h2><hr>
+                  <div class="well col-sm-4">.col-sm-4</div>
+                  <div class="well col-sm-4">.col-sm-4</div>
+                  <div class="well col-sm-4">.col-sm-4</div>
+                  <p>The following example shows how to get a three equal-width columns starting at tablets and scaling to large desktops. On mobile phones, the columns will automatically stack:</p>
+                  <p><h3>Example</h3></p><br>
+                  <pre>&lt;div class="row"&gt;
+&lt;div class="col-sm-4"&gt;.col-sm-4&lt;/div&gt;
+&lt;div class="col-sm-4"&gt;.col-sm-4&lt;/div&gt;
+&lt;div class="col-sm-4"&gt;.col-sm-4&lt;/div&gt;
+&lt;/div&gt;</pre>
+                  <h4>Thank Information By W3School</h4><br>
+                </div>
+
+                <div id="menu2" class="tab-pane fade">
+                  <h2>Bootstrap Forms</h2><hr>
+                  <h2>Bootstrap's Default Settings</h2>
+                  <p>Form controls automatically receive some global styling with Bootstrap:</p>
+                  <p>All textual <kbd>&lt;input&gt;</kbd>, <kbd>&lt;textarea&gt;</kbd>,and <kbd>&lt;select&gt;</kbd> elements with class <kbd>.form-control</kbd> have a width of 100%.</p>
+                  <h2>Bootstrap Form Layouts</h2><hr>
+                  <p>Bootstrap provides three types of form layouts:</p>
+                  <blockquote>
+                    <ul class="list-unstyled">
+                      <ul>
+                        <li>Vertical form (this is default)</li>
+                        <li>Horizontal form</li>
+                        <li>Inline form</li>
+                      </ul>
+                    </ul>
+                  </blockquote>
+                  <p>Standard rules for all three form layouts:</p>
+                  <blockquote>
+                    <ul class="list-unstyled">
+                      <ul>
+                        <li>Wrap labels and form controls in <kbd>&lt;div class="form-group"&gt;</kbd> (needed for optimum spacing)</li>
+                        <li>Add class <kbd>&lt;.form-control&gt;</kbd> to all textual <kbd>&lt;input&gt;</kbd> , <kbd>&lt;textarea&gt;</kbd> ,and <kbd>&lt;select&gt;</kbd> elements</li>
+                      </ul>
+                    </ul>
+                  </blockquote>
+                  <h2>Bootstrap Vertical Form (default)</h2><hr>
+                  <form>
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Password:</label>
+                      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                    </div>
+                    <div class="checkbox">
+                      <label><input type="checkbox"> Remember me</label>
+                    </div>
+                    <button type="button" class="btn btn-default">Submit</button>
+                  </form><br>
+                  <p>The following example creates a vertical form with two input fields, one checkbox, and a submit button:</p>
+                  <h3>Example</h3>
+                  <pre>&lt;form&gt;
+&lt;div class="form-group"&gt;
+&lt;label for="email"&gt;Email address:&lt;/label&gt;
+&lt;input type="email" class="form-control" id="email"&gt;
+&lt;/div&gt;
+&lt;div class="form-group"&gt;
+&lt;label for="pwd"&gt;Password:&lt;/label&gt;
+&lt;input type="password" class="form-control" id="pwd"&gt;
+&lt;/div&gt;
+&lt;div class="checkbox"&gt;
+&lt;label&gt;&lt;input type="checkbox"&gt;Remember me&lt;/label&gt;
+&lt;/div&gt;
+&lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</pre>
+                <h4>Thank Information By W3School</h4><br>
+                </div>
+
+              <!--</div>-->
+            </div>
+
+          <!--</div>-->
+        </div>
+
+      </div>
+    </div>
+    <footer class="container-fluid">
+      <center><p>Blog by Rattikron Hengploy 58660136</p></center>
+    </footer>
+  </body>
+</html>

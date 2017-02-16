@@ -1,0 +1,19 @@
+remote:
+  host: "angsila.cs.buu.ac.th"
+  user: "58660136"
+  path: "/export/b/y58/58660136/public_html/887371/"
+behaviour:
+  uploadOnSave: true
+  syncDownOnOpen: true
+  forgetConsole: false
+  autoHideConsole: true
+  alwaysSyncAll: false
+option:
+  deleteFiles: false
+  exclude: [
+    ".sync-config.cson"
+    ".git"
+    "node_modules"
+    "tmp"
+    "vendor"
+  ]

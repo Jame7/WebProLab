@@ -1,0 +1,618 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>lab04</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      body {
+      font: 400 18px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+      }
+    F2{
+        font-family: 'Sriracha', cursive;
+        font-size: 32px;
+        font-weight: 200;
+        margin-bottom: 30px;
+        color: #000;
+    }
+    
+    h2 {
+        font-size: 28px;
+        text-transform: uppercase;
+        color: #303030;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+    h4 {
+        font-size: 19px;
+        line-height: 1.375em;
+        color: #303030;
+        font-weight: 400;
+        margin-bottom: 30px;
+    }  
+    .jumbotron {
+        background-color: #000;
+        color: #fff;
+        padding: 100px 25px;
+        font-family: Montserrat, sans-serif;
+    }
+    .container-fluid {
+        padding: 60px 50px;
+    }
+    .bg-grey {
+        background-color: #f6f6f6;
+    }
+    .bg-black {
+        background-color: #000000;
+    }
+    .logo-small {
+        color: #f4511e;
+        font-size: 50px;
+    }
+    .logo {
+        color: #f4511e;
+        font-size: 200px;
+    }
+    .thumbnail {
+        padding: 0 0 15px 0;
+        border: none;
+        border-radius: 0;
+    }
+    .thumbnail img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+    .carousel-control.right, .carousel-control.left {
+        background-image: none;
+        color: #f4511e;
+    }
+    .carousel-indicators li {
+        border-color: #f4511e;
+    }
+    .carousel-indicators li.active {
+        background-color: #f4511e;
+    }
+    .item h4 {
+        font-size: 19px;
+        line-height: 1.375em;
+        font-weight: 400;
+        font-style: italic;
+        margin: 70px 0;
+    }
+    .item span {
+        font-style: normal;
+    }
+    .panel {
+        border: 1px solid #f4511e; 
+        border-radius:0 !important;
+        transition: box-shadow 0.5s;
+    }
+    .panel:hover {
+        box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+    }
+    .panel-footer .btn:hover {
+        border: 1px solid #f4511e;
+        background-color: #fff !important;
+        color: #f4511e;
+    }
+    .panel-heading {
+        color: #fff !important;
+        background-color: #f4511e !important;
+        padding: 25px;
+        border-bottom: 1px solid transparent;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    .panel-footer {
+        background-color: white !important;
+    }
+    .panel-footer h3 {
+        font-size: 32px;
+    }
+    .panel-footer h4 {
+        color: #aaa;
+        font-size: 14px;
+    }
+    .panel-footer .btn {
+        margin: 15px 0;
+        background-color: #f4511e;
+        color: #fff;
+    }
+    .navbar {
+        margin-bottom: 0;
+        background-color: #000000;
+        z-index: 9999;
+        border: 0;
+        font-size: 14px !important;
+        line-height: 1.42857143 !important;
+        letter-spacing: 1.9px;
+        border-radius: 0;
+        font-family: Montserrat, sans-serif;
+    }
+    .navbar li a, .navbar .navbar-brand {
+        color: #fff !important;
+    }
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #000 !important;
+        background-color: #fff !important;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: transparent;
+        color: #fff !important;
+    }
+    footer .glyphicon {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #f4511e;
+    }
+    .slideanim {visibility:hidden;}
+    .slide {
+        animation-name: slide;
+        -webkit-animation-name: slide;
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        visibility: visible;
+    }
+    @keyframes slide {
+      0% {
+        opacity: 0;
+        transform: translateY(70%);
+      } 
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+    @-webkit-keyframes slide {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+      } 
+      100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+      .btn-lg {
+          width: 100%;
+          margin-bottom: 35px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .logo {
+          font-size: 150px;
+      }
+    }
+    </style>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="lab04.html">Lab04</a>
+
+      </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-light">
+            <li><a href="http://angsila.cs.buu.ac.th/~58660136/887371/lab02/lab02.html">Lab02</a></li>
+            <li><a href="http://angsila.cs.buu.ac.th/~58660136/887371/lab03/lab03.html">Lab03</a></li>
+            <li><a href="http://angsila.cs.buu.ac.th/~58660136/887371/lab05/lab05.html">Lab05</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#js01">JS01</a></li>
+            <li><a href="#js02">JS02</a></li>
+            <li><a href="#js03">JS03</a></li>
+            <li><a href="#js04">JS04</a></li>
+            <li><a href="#js05">JS05</a></li>
+            <li><a href="#js06">JS06</a></li>
+            <li><a href="#js07">JS07</a></li>
+            <li><a href="#js08">JS08</a></li>
+            <li><a href="#js09">JS09</a></li>
+            <li><a href="#js10">JS10</a></li>
+            <li><a href="http://angsila.cs.buu.ac.th/~58660136/887371/lab01/aboutme.html">AboutMe</a></li>
+          </ul>
+        </div>
+      </div>
+
+  </nav>
+
+  <div class="jumbotron text-center">
+    <h1>JavaScript</h1> 
+    <p>887371 Web Programming | Created by Rattikron Hengploy 58660136</p>
+
+  </div>
+
+  <!-- id one -->
+  <center>
+  <div id="js01" class="container-fluid">
+    <div class="row">
+        <center><F2>Js01.html</F2></center>
+
+      <div class="col-sm-6">
+        <h2>รูปภาพ</h2>
+        <a href="photo/js01.JPG"><img src="photo/js01.JPG" width="590px" height="250px" hspace="8"></a>
+        <!--<span class="glyphicon glyphicon-globe logo slideanim"></span>-->
+      </div>
+      <div class="col-sm-6">
+        <h2>คำอธิบาย</h2>
+        <p class="text-left">9:พิมพ์สตริง Last updated on + วันและเวลาที่อัพเดทไฟล์นี้</p>
+      </div>
+      <div class="col-sm-12">
+        <h2>ผลลัพธ์</h2>
+        <h1>Frist Example of Javascript</h1>
+        <script LANGUAGE="JavaScript">
+        //<!--hide from old browsers by embedding in a comment
+        document.write("Last updated on " + document.lastModified)
+        // end script hiding -->
+        </script>
+
+      </div>
+
+    </div>
+  </div>
+  
+  </center>
+  <!-- id one -->
+
+  <!-- id two -->
+  <div id="js02" class="container-fluid text-center bg-grey">
+    <div class="row">
+      <center><F2>Js02.html</F2></center>
+      <div class="col-sm-6">
+        <h2>รูปภาพ</h2>
+        <a href="photo/js02.JPG"><img src="photo/js02.JPG" width="590px" height="250px" hspace="8"></a>
+      </div>
+      <div class="col-sm-6">
+        <h2>คำอธิบาย</h2>
+        <p class="text-left">6: พิมพ์สตริง &lt;H1&gt;Factorial Table&lt;/H1&gt;<br>
+        7: วนลูป 9 รอบ และกำหนดค่าของตัวแปร fact = fact * i <br>
+        8: พิมพ์ค่าของตัวแปร i ต่อด้วย ! = และค่าของตัวแปร fact <br>
+        9: พิมพ์ข้อความ &lt;BR&gt;</p>
+      </div>
+      <div class="col-sm-12">
+      <h2>ผลลัพธ์</h2>
+      <h1>Another Example of Javascript</h1>
+        <script LANGUAGE="JavaScript">
+          document.write("<h1>Factorial Table</h1>");
+          for(i = 1, fact = 1; i < 10; i++, fact = fact * i){
+            document.write(i + "! = " + fact);
+            document.write("<br>");
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+  <!-- id two -->
+  <!-- id 3 -->
+  <div id="js03" class="container-fluid text-center">
+    <div class="row">
+      <center><F2>Js03.html</F2></center>
+      <div class="col-sm-6">
+        <h2>รูปภาพ</h2>
+        <a href="photo/js03.JPG"><img src="photo/js03.JPG" width="600px" height="250px" hspace="8"></a>
+      </div>
+      <div class="col-sm-6">
+        <h2>คำอธิบาย</h2>
+        <p class="text-left">8:สร้างปุ่มbutton ชื่อ Click me พอClickแล้วจะขึ้นอีเวนท์แจ้งว่า You click me</p>
+      </div>
+      <div class="col-sm-12">
+        <h2>ผลลัพธ์</h2>
+        <h1>Handling Events in Javascript</h1>
+        <form>
+          <input type="button" value="Click me" onClick="alert('You clicked me')">
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- id 3 -->
+  <!-- id 4 -->
+  <div id="js04" class="container-fluid text-center bg-grey">
+    <div class="row">
+      <center><F2>Js04.html</F2></center>
+      <div class="col-sm-6">
+        <h2>รูปภาพ</h2>
+        <a href="photo/js04.JPG"><img src="photo/js04.JPG" width="550px" height="350px" hspace="8"></a>
+      </div>
+      <div class="col-sm-6">
+        <h2>คำอธิบาย</h2>
+        <p class="text-left">5: สร้างfunction outputDate<br>
+        6:กำหนดตัวแปร d เก็บค่าเวลา<br>
+        7:พิมพ์สตริง ตัวแปรd ตามเวลาปัจจุบันของเครื่อง<br>
+        14: ใช้ฟังก์ชัน outputDate นำบรรทัดที่7ออกมาพิมพ์</p>
+      </div>
+      <div class="col-sm-12">
+        <h2>ผลลัพธ์</h2>
+        <script LANGUAGE="JavaScript">
+          function outputDate() {
+            var d = new Date();
+            document.write(d.toLocaleString());
+          }
+        </script>
+        <h1>The date and time are</h1>
+        <script LANGUAGE="JavaScript">
+        outputDate();
+        </script>
+      </div>
+    </div>
+  </div>
+  <!-- id 4 -->
+  <!-- id 5 -->
+  <div id="js05" class="container-fluid text-center">
+    <div class="row">
+      <center><F2>Js05.html</F2></center>
+      <div class="col-sm-6">
+        <h2>รูปภาพ</h2>
+        <a href="photo/js05.JPG"><img src="photo/js05.JPG" width="550px" height="380px" hspace="8"></a>
+      </div>
+      <div class="col-sm-6">
+        <h2>คำอธิบาย</h2>
+        <p class="text-left">5: สร้างfunction alertUser<br>
+        6: แจ้งเตือน ข้อความ An alert box contains an exclamation mark<br>
+        8: สร้างfunction confirmUser<br>
+        9: แจ้งเตือน ข้อความ please confirm that you want\nto test another button?<br>
+        10: ถ้า กด ตกลง ไปบรรทัดที่11<br>
+        11: พิมพ์สตริง &lt;h2&gt;You selected OK&lt;/h2&gt;<br>
+        12: ถ้า กด ยกเลิก ไปบรรทัดที่13<br>
+        13: พิมพ์สตริง &lt;h2&gt;You selected Cancel&lt;/h2&gt;<br>
+        15: สร้างfunction promptUser<br>
+        16: กำหนดตัวแปร name1 เก็บ สตริง What is your name? และ ช่องว่าง ไว้เก็บข้อความ<br>
+        17: พิมพ์สตริง &lt;h2&gt;welcome to this page ตามด้วย name1 ที่เก็บข้อความนั้นไว้&lt;/h2&gt;<br>
+        24: สร้างปุ่ม ชื่อว่า Click here to test alert กดแล้วจะไปทำบรรทัดที่ 6<br>
+        25: สร้างปุ่ม ชื่อว่า Click here to test confirm กดแล้วจะไปทำบรรทัดที่ 10<br>
+        26: สร้างปุ่ม ชื่อว่า Click here to test prompt กดแล้วจะไปทำบรรทัดที่ 16</p>
+      </div>
+      <div class="col-sm-12">
+        <h2>ผลลัพธ์</h2>
+        <script LANGUAGE=JavaScript>
+          function alertUser() {
+            alert("An alert box contains an exclamation mark");
+          }
+          function confirmUser(){
+            var msg = "\n please confirm that you want\nto test another button?";
+            if(confirm(msg))
+              document.write("<h2>You selected OK</h2>");
+            else
+              document.write("<h2>You selected Cancel</h2>");
+          }
+          function promptUser() {
+            name1=prompt("What is your name?"," ");
+            document.write("<h2>welcome to this page " + name1 +"</h2>");
+          }
+        </script>
+        welcome to this page
+        <FORM>
+          <input type="button" value="Click here to test alert()" onClick = "alertUser()"><br>
+          <input type="button" value="Click here to test confirm()" onClick = "confirmUser()"><br>
+          <input type="button" value="Click here to test prompt()" onClick = "promptUser()">
+        </FORM>
+      </div>
+    </div>
+  </div>
+  <!-- id 5 -->
+  <!-- id 6 -->
+  <div id="js06" class="container-fluid text-center bg-grey">
+    <div class="row">
+      <center><F2>Js06.html</F2></center>
+      <div class="col-sm-6">
+        <h2>รูปภาพ</h2>
+        <a href="photo/js06.JPG"><img src="photo/js06.JPG" width="600px" height="350px" hspace="8"></a>
+      </div>
+      <div class="col-sm-6">
+        <h2>คำอธิบาย</h2>
+        <p class="text-left">7: พิมพ์สตริง &lt;br&gt;This browser is ตามด้วยชื่อ browser <br>
+        8: พิมพ์สตริง &lt;br&gt; Version ตามด้วย version ของ browser <br>
+        9: ถ้า parseFloat ตัดตัวหนังสือ เหลือแค่ตัวเลขและเทียบทศนิยมด้วย มากกว่าเท่ากับ 4 <br>
+        10: พิมพ์สตริง &lt;br&gt; You have an up-to-date browser <br>
+        </p>
+      </div>
+      <div class="col-sm-12">
+        <h2>ผลลัพธ์</h2>
+        <script language = JavaScript>
+          document.write("<br> This browser is "+ navigator.appName);
+          document.write("<br> Version "+ navigator.appVersion);
+          if(parseFloat(navigator.appVersion) >= 4){
+            document.write("<br> You have an up-to-date browser");
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+  <!-- id 6 -->
+  <!-- id 7 -->
+  <div id="js07" class="container-fluid text-center ">
+    <div class="row">
+      <center><F2>Js07.html</F2></center>
+      <div class="col-sm-6">
+        <h2>รูปภาพ</h2>
+        <a href="photo/js07.JPG"><img src="photo/js07.JPG" width="570px" height="350px" hspace="8"></a>
+      </div>
+      <div class="col-sm-6">
+        <h2>คำอธิบาย</h2>
+        <p class="text-left">8: สร้าง function windowHeight<br>
+        9: ตรวจสอบว่าเป็น Browser สามารถดักค่า document.body และ document.body.clientHeight ได้หรือไม่<br>
+        10: สั่งreturn document.body.clientHeight <br>
+        11: ตรวจสอบว่าเป็น Browser สามารถดักค่า window.innerHeight ได้หรือไม่<br>
+        12: สั่งreturn window.innerHeight <br>
+        13: ถ้าไม่ใช่เงื่อนไขใดๆ ให้ return ค่า 0 <br>
+        17: ตรวจสอบว่า windowHeight มากกว่าหรือเท่ากับ 300 หรือไม่ ให้ไปที่เว็บ lab04.html <br>
+        19: ถ้าไม่ใช่ ให้ไปที่เว็บ <br>
+        http://angsila.cs.buu.ac.th/~58660136/887371/lab04</p>
+      </div>
+      <div class="col-sm-12">
+        <h2>ผลลัพธ์</h2>
+        <a href="js07.html" class="btn btn-info btn-lg" role="button">js07.html</a>
+      </div>
+    </div>
+  </div>
+  <!-- id 7 -->
+  <!-- id 8 -->
+  <div id="js08" class="container-fluid text-center bg-grey">
+    <div class="row">
+      <center><F2>Js08.html</F2></center>
+      <div class="col-sm-6">
+        <h2>รูปภาพ</h2>
+        <a href="photo/js08.JPG"><img src="photo/js08.JPG" width="560px" height="350px" hspace="8"></a>
+      </div>
+      <div class="col-sm-6">
+        <h2>คำอธิบาย</h2>
+        <p class="text-left">5: สร้าง function highlightdocs<br>
+        6: ตรวจสอบ document.images<br>
+        7: ให้ document.images ที่ชื่อ docs มีที่อยู่ที่ docsOn.src<br>
+        10: สร้าง function unhighlightdocs<br>
+        11: ตรวจสอบ document.images<br>
+        12: ให้ document.images ที่ชื่อ docs มีที่อยู่ที่ docsOff.src<br>
+        15: ตรวจสอบ document.images<br>
+        16: สร้าง docsOn เป็น Object Image<br>
+        17: ให้ docsOn.src อยู่ที่ img/gg_color.png<br>
+        18: สร้าง docsOff เป็น Object Image<br>
+        19: ให้ docsOff.src อยู่ที่ img/gg_color.png<br>
+        24-26: ทำให้รูปภาพสามารถ link ไปที่ www.google.com 
+        เราต้องการ onMouseClick ทำให้รูปภาพเป็นสีขณะที่ cursor ชี้ไปยังรูปภาพนั้น
+        onMouseOut คือในขณะที่ไม่มี cursor อยู่ก็ให้เอาสีออก โดยใช้ภาพ gg_black.png เป็นรูปตั้งต้น ให้มีขนาด 25px*25px</p>
+      </div>
+      <div class="col-sm-12">
+        <h2>ผลลัพธ์</h2>
+        <script language=JavaScript>
+          function highlightdocs() {
+            if(document.images){
+              document.images["docs"].src = docsOn.src;
+            }
+          }
+          function unhighlightdocs() {
+            if(document.images){
+              document.images["docs"].src = docsOff.src;
+            }
+          }
+          if(document.images){
+            docsOn = new Image();
+            docsOn.src = "photo/gg_color.png";
+            docsOff = new Image();
+            docsOff.src = "photo/gg_gray.png";
+          }
+        </script>
+        <p><a href="http://www.google.com"
+          onMouseOver="highlightdocs()" onMouseOut = "unhighlightdocs()">
+          <img src="gg_gray.png" name = docs height= 100 width= 100 border=0></a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- id 8 -->
+  <!-- id 9 -->
+  <div id="js09" class="container-fluid text-center ">
+    <div class="row">
+      <center><F2>Js09.html</F2></center>
+      <div class="col-sm-6">
+        <h2>รูปภาพ</h2>
+        <a href="photo/js09.JPG"><img src="photo/js09.JPG" width="550px" height="350px" hspace="8"></a>
+      </div>
+      <div class="col-sm-6">
+        <h2>คำอธิบาย</h2>
+        <p class="text-left">5: สร้าง function doMoveBrowser รับค่า form เข้ามาในฟังก์ชัน<br>
+        6: รับค่าลิ้งค์เว็บไซต์จากฟังก์ชัน getSelectedValue เพื่อที่จะลิ้งค์ไปยังเว็บไซต์นั้น<br>
+        8: สร้าง function getSelectedValue<br>
+        9: return ค่าของตัวเลือกที่ถูกเลือกใน form1<br>
+        11: สร้าง function showURL รับค่า form เข้ามาในฟังก์ชัน<br>
+        12: return ค่าของ URL ที่ถูกเลือกใน form1<br>
+        20: สร้าง form ชื่อ form1<br>
+        21: สร้าง seleted ขึ้นมาเพื่อระบุชนิดของ Form <br>
+        22: option seleted value = 0 ตามด้วยข้อความ Where do you want to go today?<br>
+        23-25: สร้าง dropdown เพื่อใช้เลือกว่าเราจะเข้า web ไหน?<br>
+        27-29: สร้างกล่องเพื่อแสดง URL ของแต่ละชื่อใน dropdown</p>
+      </div>
+      <div class="col-sm-12">
+        <h2>ผลลัพธ์</h2>
+        <script language=javascript>
+        function doMoveBrowser(form) {
+                parent.location.href = form.list.options[getSelectedValue()].value;
+            }
+            function getSelectedValue() {
+                return document.form1.list.selectedIndex;
+            }
+            function showURL(form) {
+                form.TextBox.value = form.list.options[getSelectedValue()].value;
+            }
+      </script>
+      <h3>Pull-down Menu with URL Revealed</h3>
+      <center>
+        <form name = form1>
+          <select name=list onChange = showURL(this.form)>
+            <option selected value=0>Where do you want to go today?
+            <option value="http://www.google.com">Google
+            <option value="http://www.buu.ac.th">Buu University
+            <option value="http://www.informatics.buu.ac.th">Faculty of Informatics
+          </select>
+          <input type="button" value="Go" onclick= "doMoveBrowser(this.form)">
+          <input type="reset" value="Reset">
+          <input type="text" name="TextBox" size="40">
+        </form>
+      </center>
+      </div>
+    </div>
+  </div>
+  <!-- id 9 -->
+  <!-- id 10 -->
+  <div id="js10" class="container-fluid text-center bg-grey">
+    <div class="row">
+      <center><F2>Js10.html</F2></center>
+      <div class="col-sm-6">
+        <h2>รูปภาพ</h2>
+        <a href="photo/js10.JPG"><img src="photo/js10.JPG" width="550px" height="350px" hspace="8"></a>
+      </div>
+      <div class="col-sm-6">
+        <h2>คำอธิบาย</h2>
+        <p class="text-left">6: สร้างตัวแปร AR เป็น Array <br>
+        7: โดยที่ ARช่องที่0 เก็บข้อความ ปี <br>
+        8: โดยที่ ARช่องที่1 เก็บข้อความ วัน <br>
+        9: โดยที่ ARช่องที่2 เก็บข้อความ เดือน <br>
+        10: สร้างตัวแปร i = 0 <br>
+        12: สร้าง function next <br>
+        13: ตัวแปร i เท่ากับ i เพิ่มค่าทีละ 1 หารเอาเศษกับความยาวของ Array ที่ชื่อ AR <br>
+        14: นำข้อมูลใน Array มาใส่แทรกลงไปตามตำแหน่ง i ที่เพิ่มขึ้น โดย id = click (คลิก 1 ครั้ง เปลี่ยนข้อความ 1 ครั้ง โดยเริ่มคำจาก AR[1]ก่อน) <br>
+        22: เมื่อคลิ้กที่คำว่า Default หรือบริเวณ div ID="click" โปรแกรมจะสั่งให้ function next ทำงาน <br></p>
+      </div>
+      <div class="col-sm-12">
+        <h2>ผลลัพธ์</h2>
+        <script language="JavaScript">
+          var AR = new Array();
+          AR[0] = "ปี";
+          AR[1] = "วัน";
+          AR[2] = "เดือน";
+          var i = 0;
+
+          function next() {
+              i = (++i) % AR.length;
+              document.getElementById("click").innerHTML = AR[i];
+          }
+        </script>
+        Click on the middle section to have it change what it says.<br> Text-1<hr>
+        <div onclick="next()" id="click">
+            DEFAULT
+        </div>
+        <hr> Text-2
+      </div>
+    </div>
+  </div>
+  <!-- id 10 -->
+</body>
+</html>
